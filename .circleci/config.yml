@@ -8,12 +8,12 @@ workflows:
 jobs:
   test:
     docker:
-      - image: cimg/node:18.4.0
+      - image: cimg/node:17.2.0
     steps:
       - checkout
       - run: 
           name: Install dependencies
-          command: npm Install
+          command: npm install
       - run:
           Name: Run Test
           command: npm run test
