@@ -5,15 +5,10 @@ workflows:
     jobs:
       - test
 
-jobs:
-  test:
-    docker:
-      - image: cimg/node:17.2.0
     steps:
       - checkout
-      - run: 
-          name: Install dependencies
-          command: npm install
+      - node/install-packages:
+          pkg-manager: npm
       - run:
-          Name: Run Test
           command: npm run test
+          name: Run tests
